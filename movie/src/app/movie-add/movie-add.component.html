@@ -1,0 +1,30 @@
+<div>
+    <h1>Add cheyyn ra bangaru thali</h1>
+    <form action="" [formGroup]="movieForm" (ngSubmit)="addMovie()">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" formControlName="title" id="title" placeholder="Title eeda rayi">
+            <div *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched">
+                <div *ngIf="movieForm.get('title')?.errors?.['required']">Title is required.</div>
+            </div>
+        </div>
+        <div>
+            <label for="director">Director</label>
+            <input type="text" formControlName="director" id="director" placeholder="Dharshakudu eeda rayi">
+            <div *ngIf="movieForm.get('director')?.invalid && movieForm.get('director')?.touched">
+                Director is required.
+            </div>
+        </div>
+
+        <div>
+            <label for="year">Year</label>
+            <input type="number" formControlName="year" id="title" placeholder="year eeda rayi">
+            <div *ngIf="movieForm.get('year')?.invalid && movieForm.get('year')?.touched">
+                <div *ngIf="movieForm.get('year')?.errors?.['required']">Year is required.</div>
+                <div *ngIf="movieForm.get('year')?.errors?.['min']">Min year is 1900 only.</div>
+                <div *ngIf="movieForm.get('year')?.errors?.['max']">Max year can be upto current year.</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="movieForm.invalid">Add movie</button>
+    </form>
+</div>

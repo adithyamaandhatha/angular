@@ -1,0 +1,30 @@
+<div>
+    <h1>Edit eeda bangaru thalli</h1>
+    <form action="" [formGroup]="editForm" (ngSubmit)="updateMovie()">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" formControlName="title" id="title" placeholder="Title eeda rayi">
+            <div *ngIf="editForm.get('title')?.invalid && editForm.get('title')?.touched">
+                <div *ngIf="editForm.get('title')?.errors?.['required']">Title is required.</div>
+            </div>
+        </div>
+        <div>
+            <label for="director">Director</label>
+            <input type="text" formControlName="director" id="director" placeholder="Dharshakudu eeda rayi">
+            <div *ngIf="editForm.get('director')?.invalid && editForm.get('director')?.touched">
+                Director is required.
+            </div>
+        </div>
+
+        <div>
+            <label for="year">Year</label>
+            <input type="number" formControlName="year" id="title" placeholder="year eeda rayi">
+            <div *ngIf="editForm.get('year')?.invalid && editForm.get('year')?.touched">
+                <div *ngIf="editForm.get('year')?.errors?.['required']">Year is required.</div>
+                <div *ngIf="editForm.get('year')?.errors?.['min']">Min year is 1900 only.</div>
+                <div *ngIf="editForm.get('year')?.errors?.['max']">Max year can be upto current year.</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="editForm.invalid">Update movie</button>
+    </form>
+</div>
