@@ -1,13 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, retry } from 'rxjs';
+import { Movie } from './movie.model';
 
-interface Movie{
-  id: number;
-  title: string;
-  director: string;
-  year: number;
-}
 
 @Injectable({
   providedIn: 'root'

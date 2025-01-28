@@ -1,19 +1,38 @@
 <div>
     <h1>Cinema thaluka Tableuuu</h1>
     <button routerLink='/add' >Okati add cheyyochu</button>
-    <table>
+    <div>
+        <input [(ngModel)]="searchText" type="text" placeholder="title gaani director peru gani eeda ivvu" (input)="filterMovie()">
+    </div>
+    <div>
+        <select [(ngModel)]="sortBy" (change)="onSort()">
+            <option value="title">Title</option>
+            <option value="director">Director</option>
+            <option value="year">Year</option>
+        </select>
+        <button (click)="onToggle()">Sort {{ isAscending ? 'Descending' : 'Ascending' }}</button>
+         <!-- <button (click)="sortBtn()">Sort in Asc</button> -->
+        <button (click)="sortTitle()">Sort By title</button>
+        <button (click)="reload()"> Reload </button>
+    </div>
+
+
+   <table>
         <tr>
             <th>Title</th>
             <th>Dharshakudu</th>
             <th>Year</th>
         </tr>
-        <tr *ngFor="let movie of movies">
+        <tr *ngFor="let movie of filteredMovies">
             <td>{{ movie.title }}</td>
             <td>{{ movie.director }}</td>
             <td>{{ movie.year }}</td>
             <td>
                 <button (click)="deleteMovie(movie.id)">Delete</button>
                 <button (click)="editMovie(movie.id)">Edit</button>
+                <!-- <button routerLink='/view'>View</button> -->
+                <button (click)="viewMovie(movie.id)">View</button>
+
             </td>
         </tr>
     </table>

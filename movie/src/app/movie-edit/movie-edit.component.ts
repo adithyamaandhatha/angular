@@ -3,6 +3,7 @@ import { MovieService } from '../movie.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-movie-edit',
   templateUrl: './movie-edit.component.html',
@@ -22,7 +23,7 @@ export class MovieEditComponent implements OnInit{
     }
 
   ngOnInit(): void {
-    this.movieId = +this.route.snapshot.paramMap.get('id')!;
+    this.movieId = this.route.snapshot.paramMap.get('id')!;
     this.movieService.getMovieById(this.movieId).subscribe((movie) => {
       this.editForm.patchValue(movie);
     });

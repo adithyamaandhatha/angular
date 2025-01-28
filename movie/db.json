@@ -1,22 +1,28 @@
 {
   "movies": [
     {
-      "id": "2",
-      "title": "The Dark Knight",
-      "director": "Christopher Nolan",
-      "year": 2008
-    },
-    {
-      "title": "banagaru thalli",
-      "director": "Period Star",
+      "title": "Banagaru thalli",
+      "director": "Insta chukka",
       "year": 2022,
       "id": "4363"
     },
     {
-      "id": "ee90",
-      "title": "Annotation Manikantan",
-      "director": "Adithya Unclumm",
-      "year": 2025
+      "title": "Devsani Varshith Salaar",
+      "director": "Poojith chow",
+      "year": 2024,
+      "id": "287b"
+    },
+    {
+      "id": "23ec",
+      "title": "zebra",
+      "director": "zumanji",
+      "year": 2019
+    },
+    {
+      "title": "AALIK",
+      "director": "Subba rao",
+      "year": 2015,
+      "id": "6df7"
     }
   ]
 }
